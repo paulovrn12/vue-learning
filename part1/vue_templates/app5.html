@@ -1,0 +1,28 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="vue-app">
+    <h3>{{ appName() }}</h3>
+    <p>{{ welcome() }}</p>
+    <br>
+    <strong>Acesse o link abaixo:</strong>
+    <a v-bind:href="link">Google</a>
+</div>
+
+<script>
+    new Vue({
+        el:'#vue-app',
+        data: {
+            title: 'Título da aplicação',
+            text: 'Bem vindo, tenha uma boa semana',
+            link: 'https://www.google.com/'
+        },
+        methods:{
+            welcome() {
+                return this.text
+            },
+            appName() {
+                return this.title
+            }
+        }
+    })
+</script>

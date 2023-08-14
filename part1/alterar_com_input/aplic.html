@@ -1,0 +1,28 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app-vue">
+    <p>Digite algo:</p>
+    <input type="text" v-on:input="alterarParagrafo">
+    <br></br>
+    <p>O que digitou estará espelhado abaixo:</p>
+    <p>{{ paragrafo }}</p>
+</div>
+
+<div atributo-personalizado=""></div>
+
+
+<script>
+
+new Vue({
+    el: '#app-vue',
+    data: {
+        paragrafo: ''
+    },
+    methods: {
+        alterarParagrafo(event) {
+            this.paragrafo = event.target.value
+        }
+    }
+})
+
+</script>

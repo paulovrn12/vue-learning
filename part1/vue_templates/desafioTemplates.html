@@ -1,0 +1,37 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="application">
+
+    <h2>Desafio tema: Templates VueJS</h2>
+
+    <div id="ex1">
+        <p id="result">Meu nome é {{ myName }} e tenho {{ myAge }} anos de idade.</p>
+    </div>
+
+    <hr>
+
+    <div id="ex2">
+        <p id="result">Minha idade triplicada é igual a {{ myAgeTriple() }}.</p>
+    </div>
+
+    <hr>
+
+    <div id="ex3">
+        <p id="result">Exibindo um número entre 0 e 1: {{ numberRandon() }}.</p>
+    </div>
+
+    <hr>
+
+    <div id="ex4">
+        <img id="result" height="100" v-bind:src=linkImage>
+    </div>
+
+    <hr>
+
+    <div id="ex5">
+        <input id="result" type="text" v-bind:value=myName>
+    </div>
+
+</div>
+
+<script src="desafioTemplates.js"></script>
