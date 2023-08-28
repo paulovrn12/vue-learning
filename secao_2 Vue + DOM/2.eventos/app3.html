@@ -1,0 +1,27 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <div id="display">
+        <p>{{ contador }}</p>
+    </div>
+    <div id="botao">
+        <button v-on:click="soma(5, $event)">SOMA</button>
+    </div>
+
+
+</div>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            contador: 0
+        },
+        methods: {
+            soma(valor, event) {
+                console.log(valor, event)
+                this.contador += valor
+            }
+        }
+    })
+</script>

@@ -1,0 +1,26 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="vue">
+    <h3>Desafio de Eventos Vue</h3>
+    <div id="ex1">
+        <div id="alert-to-button-click">
+            <button v-on:click="alertButtonClick">Exibir Alerta</button>
+        </div>
+    </div>
+    <hr>
+    <div id="ex2">
+        <div id="value-event-keydown-in-variable">
+            <input type="text" v-on:keyup="saveValueInput">
+            <p>Valor digitado acima: {{ value }}</p>
+        </div>
+    </div>
+    <hr>
+    <div id="ex3">
+        <div id="value-event-keydown-in-variable-if-enter-press">
+            <input type="text" v-on:keydown.enter="saveValueInput">
+            <p>Valor digitado acima: {{ value }}</p>
+        </div>
+    </div>
+</div>
+
+<script src="desafioEventos.js"></script>

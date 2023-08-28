@@ -1,0 +1,20 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <div id="s">
+        <p>{{ title }}</p>
+        <input type="text" v-model="title">
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            title: "Digite aqui"
+        },
+        methods: {
+
+        }
+    })
+</script>

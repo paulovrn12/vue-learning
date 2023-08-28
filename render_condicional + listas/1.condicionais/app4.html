@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-show</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <template id="user-logged" v-if=login>
+            <p>Usuário {{ nome }} logado</p>
+            <p>Acesso: {{ type }}</p>
+        </template>
+        <p v-else-if=anonimo>Usuário anônimo</p>
+        <p v-else>Usuário não logado</p>
+
+        <button @click='login = !login'>{{ login ? 'Sair' : 'Entrar' }}</button>
+        <input type="checkbox" v-model=anonimo>
+        <hr>
+        <footer id="rodapé" v-show=login>
+            Para usuários administradores
+        </footer>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#app',
+        data: {
+            nome: 'Paulo Victor',
+            sexo: 'Masc',
+            type: 'admin',
+            login: false,
+            anonimo: true
+        }
+    })
+</script>
+</html>

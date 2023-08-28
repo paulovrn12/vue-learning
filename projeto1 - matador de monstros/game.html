@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/icon/jungle.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Warwick vs. Barão Na'shor</title>
+</head>
+<body>
+    <div id="game">
+        <template>
+            <div id="view">
+
+            </div>
+
+            <div id="hud" class="flex space-x-10">
+                <div id="icon_champion" class="w-20">
+                    <img src="./images/champions/warwick/warwic_icon.png" alt="" class="rounded-full">
+                </div>
+
+                <div id="spells" class="flex space-x-2.5 items-center">
+                    <div id="q_spell" class="">
+                        <img src="./images/champions/warwick/spells/warwick_q.png" alt="Q Spell" class="rounded-md">
+                    </div>
+
+                    <div id="w_spell" class="">
+                        <img src="./images/champions/warwick/spells/warwick_w.png" alt="W Spell" class="rounded-md">
+                    </div>
+
+                    <div id="e_spell" class="">
+                        <img src="./images/champions/warwick/spells/warwick_e.png" alt="E Spell" class="rounded-md">
+                    </div>
+
+                    <div id="r_spell" class="">
+                        <img src="./images/champions/warwick/spells/warwick_r.png" alt="R Spell" class="rounded-md">
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template>
+            <div id="logs">
+
+            </div>
+        </template>
+    </div>
+</body>
+</html>
+<script src="./game.js"></script>

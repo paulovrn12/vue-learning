@@ -1,0 +1,21 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <p>Valor atual: {{ valor }}</p>
+    <button @click="valor++">AUMENTAR 1</button>
+    <br>
+    <br>
+    <input type="text" :value="valor">
+</div>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            valor: 0,
+        },
+        computed: {},
+        methods: {},
+        watch: {}
+    })
+</script>

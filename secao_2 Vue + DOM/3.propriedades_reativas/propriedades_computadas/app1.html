@@ -1,0 +1,31 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <p>Valor atual 1: {{ valueNow1 }}</p>
+    <p>É maior ou igual a 5? {{ resultado }}</p>
+    <button v-on:click="valueNow1++">AUMENTAR 1</button>
+    <button v-on:click="valueNow1--">DIMINUIR 1</button>
+    <hr>
+    <p>Valor atual 2: {{ valueNow2 }}</p>
+    <button v-on:click="valueNow2++">AUMENTAR 2</button>
+    <button v-on:click="valueNow2--">DIMINUIR 2</button>
+</div>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            valueNow1: 0,
+            valueNow2: 0,
+        },
+        computed: {
+            resultado() {
+                console.log('metodo resultado() chamado!')
+                return this.valueNow1 >= 5 ? "Sim" : "Não"
+            }
+        },
+        methods: {
+
+        }
+    })
+</script>

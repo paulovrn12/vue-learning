@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-for com template</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <strong><p>Listagem de cores</p></strong>
+        <ul id="elementos-a-serem-iterados">
+            <li style="list-style: decimal;" v-for="(cor, i) in cores" :valorCor="cor">{{ cor }}</li>
+        </ul>
+        <button @click="cores.push('branca')">Adicionar</button>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            cores: [
+                'vermelho',
+                'verde',
+                'amarelo',
+                'azul'
+            ],
+        },
+    })
+</script>
+</html>
+

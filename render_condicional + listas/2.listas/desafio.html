@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Desafio Listas com Vue</title>
+</head>
+<body>
+    <div id="desafio">
+        <h3>Desafio 1: Alternancia de botões</h3>
+        <div>
+            <button @click="isVisible = !isVisible">Alternar</button>
+            <p v-if="isVisible">Você quer me ver...</p>
+            <p v-else>...ou eu</p>
+            <p v-show="isVisible">Você quer me ver...</p>
+            <p v-show="!isVisible">...ou eu</p>
+        </div>
+        <hr>
+        <h3>Desafio 2: Exibição de lista simples com índice</h3>
+        <ul>
+            <li v-for="(fruta, indice) in listaFrutas">{{ indice + 1 }}) {{ fruta }}</li>
+        </ul>
+        <hr>
+        <h3>Desafio 3: Exibição de chave, valor e indice de objeto</h3>
+        <ul>
+            <li v-for="(valor, chave, indice) in livro">{{ indice + 1 }}) {{ chave }}: {{ valor }}</li>
+        </ul>
+
+        <hr>
+
+        <!--
+        4. Imprima o seguinte objeto (somente os valores) e também crie um loop aninhado para o array (aluno):
+        (Dica: use v-for e v-if na resolução)
+        -->
+
+
+        <ul>
+            <li v-for="(valor, chave) in aluno">
+                <template v-if="!Array.isArray(valor)">
+                    {{ valor }}
+                </template>
+                <template v-else>
+                    Notas:
+                    <ul>
+                        <li v-for="nota in valor">
+                            {{ nota }}
+                        </li>
+                    </ul>
+                </template>
+            </li>
+        </ul>
+
+    </div>
+</body>
+</html>
+<script src="./desafio.js"></script>

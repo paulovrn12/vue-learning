@@ -1,0 +1,55 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<style>
+    .boxes {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(142, 255, 217);
+        border-radius: 10px;
+    }
+
+    .cor1 {
+        background-color: rgb(255, 58, 58);
+    }
+
+    .cor2 {
+        background-color: rgb(13, 255, 13);
+    }
+
+    .cor3 {
+        background-color: rgb(37, 37, 255);
+    }
+</style>
+
+<div id="app">
+    <div class="boxes">
+        <div class="box" :class="estilo1" @click="aplicarCor1 = !aplicarCor1"></div>
+        <div class="box"></div>
+        <div class="box" :class="classeCSS"></div>
+    </div>
+    <hr>
+    <input type="text" v-model="classeCSS">
+</div>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            aplicarCor1: false,
+            classeCSS: 'cor1'
+        },
+        computed: {
+            estilo1() {
+                return {
+                    cor1: this.aplicarCor1,
+                    cor2: !this.aplicarCor1
+                }
+            }
+        }
+    })
+</script>

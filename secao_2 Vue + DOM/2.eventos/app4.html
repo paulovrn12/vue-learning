@@ -1,0 +1,26 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="vue">
+    <div id="mouse" v-on:mousemove="coletarEixosMouse">
+        <p>EixoX: {{ mouseX }}</p>
+        <p>EixoY: {{ mouseY }}</p>
+        <span v-on:mousemove.stop> EVENTO NÃO É DISPARADO DAQUI</span>
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: '#vue',
+        data: {
+            valueDisplay: 0,
+            mouseX: 0,
+            mouseY: 0
+        },
+        methods: {
+            coletarEixosMouse(event) {
+                this.mouseX = event.clientX
+                this.mouseY = event.clientY
+            }
+        }
+    })
+</script>

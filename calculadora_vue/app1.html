@@ -1,0 +1,50 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div id="vue" class="">
+    <div id="item" class="m-5 bg-blue-800 p-5 h-80 w-60 rounded">
+        <div id="display" class="flex px-2 bg-neutral-100 rounded mb-5 h-10">
+            <div id="value" class="flex items-center">
+                {{ valueDisplay }}
+            </div>
+        </div>
+        <div id="buttons" class="space-y-1">
+            <div id="linha0" class="flex space-x-1 h-10">
+                <button v-on:click="" id="reset" class="bg-neutral-300 rounded w-1/4">CE</button>
+                <button v-on:click="" id="clear" class="bg-neutral-300 rounded w-1/4">C</button>
+                <button v-on:click="" id="backspace" class="bg-neutral-300 rounded w-1/4"><</button>
+                <button v-on:click="" id="divis" class="bg-neutral-300 rounded w-1/4">/</button>
+            </div>
+            <div id="linha1" class="flex space-x-1 h-10">
+                <button v-on:click="" id="numb7" class="bg-neutral-100 rounded w-1/4">7</button>
+                <button v-on:click="" id="numb8" class="bg-neutral-100 rounded w-1/4">8</button>
+                <button v-on:click="" id="numb9" class="bg-neutral-100 rounded w-1/4">9</button>
+                <button v-on:click="" id="multi" class="bg-neutral-300 rounded w-1/4">*</button>
+            </div>
+
+            <div id="linha2" class="flex space-x-1 h-10">
+                <button v-on:click="" id="numb4" class="bg-neutral-100 rounded w-1/4">4</button>
+                <button v-on:click="" id="numb5" class="bg-neutral-100 rounded w-1/4">5</button>
+                <button v-on:click="" id="numb6" class="bg-neutral-100 rounded w-1/4">6</button>
+                <button v-on:click="" id="subtr" class="bg-neutral-300 rounded w-1/4">-</button>
+            </div>
+
+            <div id="linha3" class="flex space-x-1 h-10">
+                <button v-on:click="" id="numb1" class="bg-neutral-100 rounded w-1/4">1</button>
+                <button v-on:click="" id="numb2" class="bg-neutral-100 rounded w-1/4">2</button>
+                <button v-on:click="" id="numb3" class="bg-neutral-100 rounded w-1/4">3</button>
+                <button v-on:click="" id="somat" class="bg-neutral-300 rounded w-1/4">+</button>
+            </div>
+
+
+            <div id="linha4" class="flex space-x-1 h-10">
+                <button v-on:click="" id="numb0" class="bg-neutral-100 rounded w-1/4">0</button>
+                <button v-on:click="" id="point" class="bg-neutral-300 rounded w-1/4">,</button>
+                <button v-on:click="" id="percent" class="bg-neutral-300 rounded w-1/4">%</button>
+                <button v-on:click="" id="result" class="bg-neutral-500 rounded w-1/4">=</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
