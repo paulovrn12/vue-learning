@@ -6,45 +6,109 @@
     <link rel="shortcut icon" href="./images/icon/jungle.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <title>Warwick vs. Barão Na'shor</title>
+    <title>Warwick vs. Na'shor</title>
 </head>
 <body>
-    <div id="game">
-        <template>
-            <div id="view">
+    <div v-show="!gameStart"></div>
+    <div v-show="gameStart" id="game" class="flex h-screen items-center justify-center bg-gradient-to-r from-sky-700 to-green-900 flex">
+        <div>
+            <div id="view" class="m-2 border-2 border-stone-500 border-4">
 
-            </div>
+                <!-- Map Lair Baron-->
+                <div id="map" class="relative flex bg-black w-[400px] h-[300px] bg-[url('./images/map/map_baron.png')] bg-cover bg-center bg-no-repeat">
 
-            <div id="hud" class="flex space-x-10">
-                <div id="icon_champion" class="w-20">
-                    <img src="./images/champions/warwick/warwic_icon.png" alt="" class="rounded-full">
-                </div>
-
-                <div id="spells" class="flex space-x-2.5 items-center">
-                    <div id="q_spell" class="">
-                        <img src="./images/champions/warwick/spells/warwick_q.png" alt="Q Spell" class="rounded-md">
+                    <!-- Warwick model -->
+                    <div id="warwick_model" class="w-20 absolute top-[150px] left-[110px]">
+                        <img src="./images/champions/warwick/warwick_model.png" alt="" class="">
                     </div>
 
-                    <div id="w_spell" class="">
-                        <img src="./images/champions/warwick/spells/warwick_w.png" alt="W Spell" class="rounded-md">
+                    <!-- Na'shor model -->
+                    <div id="nashor_model" class="w-48 absolute left-[120px]">
+                        <img src="./images/objective/nashor/nashor_model.png" alt="">
                     </div>
 
-                    <div id="e_spell" class="">
-                        <img src="./images/champions/warwick/spells/warwick_e.png" alt="E Spell" class="rounded-md">
-                    </div>
-
-                    <div id="r_spell" class="">
-                        <img src="./images/champions/warwick/spells/warwick_r.png" alt="R Spell" class="rounded-md">
-                    </div>
                 </div>
             </div>
-        </template>
 
-        <template>
-            <div id="logs">
+            <!-- Hud of Spells -->
+            <div id="hud" class="relative m-2 border-stone-500 border-4 bg-stone-500 bg-opacity-50">
+                <div class="flex items-center">
+                    <!-- Champion Icon -->
+                    <div id="icon_champion" class="w-16 border-4 rounded-full border-stone-500 m-2">
+                        <img src="./images/champions/warwick/warwic_icon.png" alt="" class="rounded-full">
+                    </div>
 
+                    <!-- Spells -->
+                    <div id="spells" class="flex space-x-2.5 absolute right-2">
+
+                        <!-- Auto Atack -->
+                        <div id="a_spell" class="relative w-12 h-12 bg-[url('./images/champions/warwick/spells/warwick_auto-atack.png')] bg-cover bg-center bg-no-repeat rounded-md border-4 border-stone-500">
+                            <strong class="text-white absolute -bottom-2 -left-1">A</strong>
+                        </div>
+
+                        <!-- Spell Q -->
+                        <div id="q_spell" class="relative w-12 h-12 bg-[url('./images/champions/warwick/spells/warwick_q.png')] bg-cover bg-center bg-no-repeat rounded-md border-4 border-stone-500">
+                            <strong class="text-white absolute -bottom-2 -left-1">Q</strong>
+                        </div>
+
+                        <!-- Spell W -->
+                        <div id="w_spell" class="relative w-12 h-12 bg-[url('./images/champions/warwick/spells/warwick_w.png')] bg-cover bg-center bg-no-repeat rounded-md border-4 border-stone-500">
+                            <strong class="text-white absolute -bottom-2 -left-1">W</strong>
+                        </div>
+
+                        <!-- Spell E -->
+                        <div id="e_spell" class="relative w-12 h-12 bg-[url('./images/champions/warwick/spells/warwick_e.png')] bg-cover bg-center bg-no-repeat rounded-md border-4 border-stone-500">
+                            <strong class="text-white absolute -bottom-2 -left-1">E</strong>
+                        </div>
+
+                        <!-- Spell R -->
+                        <div id="r_spell" class="relative w-12 h-12 bg-[url('./images/champions/warwick/spells/warwick_r.png')] bg-cover bg-center bg-no-repeat rounded-md border-4 border-stone-500">
+                            <strong class="text-white absolute -bottom-2 -left-1">R</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Life bar 3000pts-->
+                <div id="life_bar">
+                    <div class="bg-lime-500 h-6 m-2 text-white text-center content-center border-4 border-stone-500">
+                        <strong>{{ /* valor da barra de vida atual / total */ }} 3000 / 3000</strong>
+                    </div>
+                </div>
+                <div id="mana_bar">
+                    <div class="bg-blue-500 h-6 m-2 text-white text-center content-center border-4 border-stone-500">
+                        <strong>{{ /* valor da barra de mana atual / total */ }} 1000 / 1000</strong>
+                    </div>
+                </div>
             </div>
-        </template>
+        </div>
+
+        <div class="m-2">
+            <div id="options" class="bg-white w-80 ">
+                <div id="logs">
+                    <h1>Logs da aplicação</h1>
+                </div>
+                <div id="settings">
+
+                </div>
+            </div>
+
+            <div id="hud" class="relative m-2 border-stone-500 border-4 bg-stone-500 bg-opacity-50">
+                <div class="flex items-center">
+                    <!-- Champion Icon -->
+                    <div id="icon_champion" class="w-16 border-4 rounded-full border-stone-500 m-2">
+                        <img src="./images/objective/nashor/nashor_icon.png" alt="" class="rounded-full">
+                    </div>
+                </div>
+
+                <!-- Life bar 3000pts-->
+                <div id="life_bar" class="flex">
+                    <div class="bg-lime-500 h-6 m-2 text-white text-center content-center border-4 border-stone-500">
+                        <strong>{{ /* valor da barra de vida atual / total */ }} 12000 / 12000</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
